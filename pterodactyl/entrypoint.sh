@@ -89,4 +89,9 @@ fi
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
-eval ${MODIFIED_STARTUP}
+if [ "$GDB" = "1" ]; then
+    echo "Starting under gdbserver on port 1234"
+    gdbserver 0.0.0.0:1234 ${MODIFIED_STARTUP}
+else
+    eval ${MODIFIED_STARTUP}
+fi
