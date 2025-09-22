@@ -9,6 +9,7 @@ RUN         apt update && apt install -y iproute2 gdb ffmpeg && apt-get clean
 RUN         git clone https://github.com/peadar/pstack; cd pstack; mkdir build; cd build; cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..; make -j4; make install; cd ../..; rm -rf pstack
 USER        container
 ENV         USER=container HOME=/home/container
+ENV         GDB=0
 WORKDIR     /home/container
 
 COPY        ./entrypoint.sh /entrypoint.sh
