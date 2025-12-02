@@ -12,7 +12,7 @@ on:
 
 jobs:
   push:
-    name: "swiftly:pterodactyl"
+    name: "gdbserver:pterodactyl"
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -36,4 +36,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/swiftly-solution/swiftly:pterodactyl
+            ghcr.io/slynxcz/gdbserver:pterodactyl
