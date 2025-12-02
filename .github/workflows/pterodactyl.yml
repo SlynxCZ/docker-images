@@ -12,7 +12,7 @@ on:
 
 jobs:
   push:
-    name: "gdbserver:pterodactyl"
+    name: "docker-images:gdb"
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -36,4 +36,4 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            ghcr.io/slynxcz/gdbserver:pterodactyl
+            ghcr.io/slynxcz/gdb:gdb
